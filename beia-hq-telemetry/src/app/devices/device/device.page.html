@@ -1,0 +1,36 @@
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer
+></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Device</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <img src="../../../assets/photos/map.png">
+
+  <ion-card>
+    <h2> &nbsp; <span>Device ID: </span>{{ this.id }}</h2>
+    <h5> &nbsp; List of Sensors Available:</h5>
+    <!-- <template ngFor #sensor [ngForIn]="data">
+      <div>{{sensor}}</div>
+    </template>
+     -->
+
+
+    <ion-item *ngFor="let sensor of this.sensors | keyvalue"  >
+      <ion-badge color="primary" slot="start">-</ion-badge>
+      <ion-label>
+        <h2><span>Sensors : </span>{{ sensor.value }}</h2>
+        
+      </ion-label>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

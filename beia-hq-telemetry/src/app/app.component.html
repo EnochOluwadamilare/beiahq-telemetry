@@ -3,8 +3,18 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hq@beia.ro</ion-note>
+          <img src="../../assets/photos/beia-banner.jpeg" />
+          
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="../../assets/photos/beia-circular.png" />
+            </ion-avatar>
+            
+            <ion-label>
+              <h2 style="font-weight: bold;">BeiaHQ Telemetry</h2>
+              <p>hq@beia.ro</p>
+            </ion-label>
+          </ion-item>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
