@@ -33,4 +33,171 @@
     </ion-item>
 
   </ion-card>
+
+  <ion-card>
+    <h5> &nbsp; Sensors Live Data:</h5>
+    <!-- <template ngFor #sensor [ngForIn]="data">
+      <div>{{sensor}}</div>
+    </template>
+     -->
+
+    <div *ngFor="let device of devicesinfo">
+      <div *ngIf="device.id===this.id">
+        <ion-item *ngIf="device.avg_temperature">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Temperature: </span>{{ device.avg_temperature }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_pressure">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Pressure: </span>{{ device.avg_pressure }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_humidity">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Humidity: </span>{{ device.avg_humidity }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_gas1">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>O<sub>3</sub>: </span>{{ device.avg_gas1 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_gas2">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>NO<sub>2</sub>: </span>{{ device.avg_gas2 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_gas3">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>SO<sub>3</sub>: </span>{{ device.avg_gas3 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_gas4">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>CO: </span>{{ device.avg_gas4 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_voltage">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Voltage: </span>{{ device.avg_voltage }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.city">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>City: </span>{{ device.city }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_co2">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>CO<sub>2</sub>: </span>{{ device.avg_co2 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_ch2o">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Ch<sub>2</sub>O: </span>{{ device.avg_ch2o }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_cpm">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Cpm: </span>{{ device.avg_cpm }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.detector">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Detector: </span>{{ device.detector }}</h2>
+            
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.latitude">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Latitude: </span>{{ device.latitude }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.longitude">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Longitude: </span>{{ device.longitude }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.altitude">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Altitude: </span>{{ device.altitude }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_pm1">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>PM1: </span>{{ device.avg_pm1 }}</h2>
+            
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_pm25">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>PM25: </span>{{ device.avg_pm25 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_pm25">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>PM10: </span>{{ device.avg_pm10 }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_pm10">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Timelocal: </span>{{ device.avg_timelocal }}</h2>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="device.avg_battery">
+          <ion-badge color="primary" slot="start">-</ion-badge>
+          <ion-label >
+            <h2><span>Battery: </span>{{ device.avg_battery }}</h2>
+          </ion-label>
+        </ion-item>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+  </ion-card>
 </ion-content>

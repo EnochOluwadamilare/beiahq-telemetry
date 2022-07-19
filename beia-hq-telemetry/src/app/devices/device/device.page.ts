@@ -12,8 +12,14 @@ export class DevicePage implements OnInit {
 
   
   id: any;
+  obj: any;
   sensors: any=[];
   key: any={};
+
+  varone: any=[];
+  vartwo: any=[];
+
+  devicesinfo: any=[];
 
   
 
@@ -23,8 +29,6 @@ export class DevicePage implements OnInit {
 
 
   ngOnInit() {
-
-
     this.activatedroute.queryParams.subscribe(params => {
       this.id = params['id'];
 
@@ -56,6 +60,7 @@ export class DevicePage implements OnInit {
 
             this.key["keys"]=sensor;
             console.log(this.key)
+            // console.log(this.key[])
             var nww=new KeyValueDiffers(this.sensors);
             console.log(nww.factories.keys);
 
@@ -63,7 +68,27 @@ export class DevicePage implements OnInit {
             
           }
 
+        }
+      );
+
+        this.http.get('https://data.uradmonitor.com/api/v1/devices/',{
+          headers
         })
+          .subscribe(data=>{
+            console.log(data);
+            
+            this.devicesinfo=data;
+
+            for (const device in data)
+            {
+              this.varone=device;
+              for (const dev in this.varone)
+              {
+                console.log(device["id"]);
+              }
+            }
+          }
+        );
     });
   }
 
