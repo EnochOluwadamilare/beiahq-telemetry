@@ -1,0 +1,6 @@
+{
+	"appId": "com.enoch.beiahq",
+	"appName": "BeiaHQ Telemetry",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

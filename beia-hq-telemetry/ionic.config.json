@@ -1,5 +1,7 @@
 {
   "name": "BeiaHQ Telemetry",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
